@@ -1,0 +1,3 @@
+Glfw error [65544]: X11: Failed to open display :0
+Glfw error [0]: glfwInit failed!
+Glfw error [65544]: Linux: Failed to watch for joystick connections in /dev/input: No space left on device
