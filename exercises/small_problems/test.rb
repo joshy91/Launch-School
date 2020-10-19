@@ -1,22 +1,14 @@
-munsters = {
-  "Herman" => { "age" => 32, "gender" => "male" },
-  "Lily" => { "age" => 30, "gender" => "female" },
-  "Grandpa" => { "age" => 402, "gender" => "male" },
-  "Eddie" => { "age" => 10, "gender" => "male" },
-  "Marilyn" => { "age" => 23, "gender" => "female"}
+hsh = {
+  'grape' => {type: 'fruit', colors: ['red', 'green'], size: 'small'},
+  'carrot' => {type: 'vegetable', colors: ['orange'], size: 'medium'},
+  'apple' => {type: 'fruit', colors: ['red', 'green'], size: 'medium'},
+  'apricot' => {type: 'fruit', colors: ['orange'], size: 'medium'},
+  'marrow' => {type: 'vegetable', colors: ['green'], size: 'large'},
 }
 
-def age_group(num)
-  if num > 65
-    'senior'
-  elsif num > 18
-    'adult'
-  else
-    'kid'
-  end
+new_hash = hsh.map do |k,v|
+  return_val = v[:type]=='fruit' ? v[:colors] : v[:size].upcase
+  return_val == v[:colors] ? return_val.map{|ele| ele.capitalize} : return_val
 end
-    
 
-munsters.values.each {|hsh| hsh["age_group"] = age_group(hsh["age"])}
-
-puts munsters
+p new_hash
