@@ -1,14 +1,12 @@
-hsh = {
-  'grape' => {type: 'fruit', colors: ['red', 'green'], size: 'small'},
-  'carrot' => {type: 'vegetable', colors: ['orange'], size: 'medium'},
-  'apple' => {type: 'fruit', colors: ['red', 'green'], size: 'medium'},
-  'apricot' => {type: 'fruit', colors: ['orange'], size: 'medium'},
-  'marrow' => {type: 'vegetable', colors: ['green'], size: 'large'},
-}
+class Person
+  attr_writer :first_name, :last_name
 
-new_hash = hsh.map do |k,v|
-  return_val = v[:type]=='fruit' ? v[:colors] : v[:size].upcase
-  return_val == v[:colors] ? return_val.map{|ele| ele.capitalize} : return_val
+  def full_name
+    first_name + ' ' + last_name
+  end
 end
 
-p new_hash
+mike = Person.new
+mike.first_name = 'Michael'
+mike.last_name = 'Garcia'
+p mike.full_name # => 'Michael Garcia'
